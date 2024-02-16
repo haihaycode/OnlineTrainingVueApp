@@ -12,13 +12,13 @@
 
                     <b-form @submit.prevent="handleLogin">
                       <b-form-group id="login-username-group" label="Tên người dùng:" label-for="login-username">
-                        <b-form-input id="login-username" v-model.trim="loginForm.username"></b-form-input>
+                        <b-form-input id="login-username" autocomplete="username" v-model.trim="loginForm.username"></b-form-input>
                         <div v-if="!$v.loginForm.username.required" class="error">Vui lòng nhập tên người dùng.</div>
                         <div v-else-if="!$v.loginForm.username.usernameFormat" class="error">Tên đăng nhập không dấu và
                           dính liền.</div>
                       </b-form-group>
                       <b-form-group id="login-password-group" label="Mật khẩu:" label-for="login-password">
-                        <b-form-input id="login-password" v-model.trim="loginForm.password"
+                        <b-form-input id="login-password"  autocomplete="current-password" v-model.trim="loginForm.password"
                           type="password"></b-form-input>
                         <div v-if="!$v.loginForm.password.required" class="error">Vui lòng nhập mật khẩu.</div>
                       </b-form-group>

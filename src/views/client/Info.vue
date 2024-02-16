@@ -92,7 +92,7 @@
                                         <b-form @submit.prevent="submitForm" id="formEditInfo">
                                             <b-form-group label="UserName *" label-for="username"
                                                 :state="!$v.userInfo.username.$error">
-                                                <b-form-input id="username" disabled
+                                                <b-form-input id="username"  autocomplete="username"  disabled
                                                     v-model="userInfo.username"></b-form-input>
                                                 <span v-if="!$v.userInfo.username.required">Tên người
                                                     dùng là trường bắt buộc</span>
@@ -116,7 +116,7 @@
                                             <b-form-group label="Mật khẩu *" label-for="password"
                                                 :state="!$v.userInfo.password.$error">
                                                 <b-form-input type="password" id="password"
-                                                    v-model="userInfo.password"></b-form-input>
+                                                    v-model="userInfo.password" autocomplete="current-password"></b-form-input>
                                                 <span v-if="!$v.userInfo.password.required">Mật khẩu là
                                                     trường bắt buộc</span>
                                             </b-form-group>

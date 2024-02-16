@@ -19,16 +19,16 @@
                           liền.</div>
                       </b-form-group>
                       <b-form-group id="email-group" label="Email:" label-for="email">
-                        <b-form-input id="email" v-model.trim="form.email" type="email"></b-form-input>
+                        <b-form-input id="email" v-model.trim="form.email" autocomplete="username" type="email"></b-form-input>
                         <div v-if="!$v.form.email.required" class="error">Vui lòng nhập email.</div>
                         <div v-else-if="!$v.form.email.email" class="error">Email không hợp lệ.</div>
                       </b-form-group>
                       <b-form-group id="password-group" label="Mật khẩu:" label-for="password">
-                        <b-form-input id="password" v-model.trim="form.password" type="password"></b-form-input>
+                        <b-form-input id="password" v-model.trim="form.password" autocomplete="new-password" type="password"></b-form-input>
                         <div v-if="!$v.form.password.required" class="error">Vui lòng nhập mật khẩu.</div>
                       </b-form-group>
                       <b-form-group id="confirmPassword-group" label="Xác nhận mật khẩu:" label-for="confirmPassword">
-                        <b-form-input id="confirmPassword" v-model.trim="form.confirmPassword"
+                        <b-form-input id="confirmPassword" autocomplete="new-password" v-model.trim="form.confirmPassword"
                           type="password"></b-form-input>
                         <div v-if="!$v.form.confirmPassword.required" class="error">Vui lòng xác nhận mật khẩu.</div>
                         <div v-else-if="!$v.form.confirmPassword.sameAsPassword" class="error">Mật khẩu không khớp.</div>
