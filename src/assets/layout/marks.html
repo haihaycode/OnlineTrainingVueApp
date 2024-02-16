@@ -1,0 +1,187 @@
+<!-- Registration 5 - Bootstrap Brain Component -->
+<style>
+    
+    table {
+        border: 1px solid #ccc;
+        border-radius: 10px !important;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        table-layout: fixed;
+    }
+    table tr {
+
+        border: 1px solid #ddd;
+        padding: .35em;
+    }
+    table th,
+    table td {
+        padding: .625em;
+        text-align: center;
+    }
+    table th {
+        font-size: .85em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+    }
+    @media screen and (max-width: 600px) {
+        table {
+            border: 0;
+        }
+
+        table caption {
+            font-size: 1.3em;
+        }
+
+        table thead {
+            border: none;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+
+        table tr {
+            border-bottom: 3px solid #ddd;
+            display: block;
+            margin-bottom: .625em;
+        }
+
+        table td {
+            border-bottom: 1px solid #ddd;
+            display: block;
+            font-size: .8em;
+            text-align: right;
+        }
+
+        table td::before {
+            /*
+          * aria-label has no advantage, it won't be read inside a table
+          content: attr(aria-label);
+          */
+            content: attr(data-label);
+            float: left;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        table td:last-child {
+            border-bottom: 0;
+        }
+    }
+    /* CSS */
+    .overflow-y-scroll {
+        height: 200px;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Tùy chỉnh thanh cuộn */
+    .overflow-y-scroll::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .overflow-y-scroll::-webkit-scrollbar-thumb {
+        background-color: #888;
+        border-radius: 4px;
+    }
+
+    .overflow-y-scroll::-webkit-scrollbar-track {
+        background-color: #f5f5f5;
+    }
+</style>
+<section class=" p-md-4 p-xl-5 vh-300">
+    <div class="container">
+        <div class="">
+            <div class="row g-0">
+                <div class="col-12 col-md-12 mb-4">
+                    <div class="d-flex align-items-center justify-content-center h-100">
+                        <div class="col-10 col-xl-8 py-3">
+                            <img class="img-fluid rounded mb-4" loading="lazy" src="image/features.png"
+                                alt="BootstrapBrain Logo">
+                            <hr class="border-primary-subtle mb-4">
+                            <h2 class="h1 mb-4">Hi ! <code> {{student.fullname}}</code></h2>
+                            <h3 class="fs-6 h3 fw-normal text-secondary m-0">Điểm hiện tại : <code
+                                    class="h1">{{student.marks.mark}}</code> điểm</h3>
+                            <h3 class="fs-6 h3 fw-normal text-secondary m-0">Số Quiz đã làm : <code
+                                    class="h1">{{student.marks.marksHistory.length}}</code> bài</h3>
+                            <p class="lead pt-1 text-secondary ">Chúc bạn thi tốt và đạt nhiều điểm cao - cố gắng hết
+                                mình với các bài thi ở trường để dành được nhiều thành thích như mong muốn </p>
+                        </div>
+                    </div>
+               
+
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="card-body p-md-4 p-xl-5">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-5">
+                                    <h3 class="fs-1 text-center fw-normal text-secondary m-0">Lịch sử các bài thi</h3>
+                                    <h3 class="fs-6 fw-normal text-secondary m-0"></h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overflow-y-scroll" style="height: 400px;">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Môn</th>
+                                        <th scope="col">Điểm</th>
+                                        <th scope="col">Thời Gian</th>
+                                        <th scope="col">Tổng kết</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="an in student.marks.marksHistory ">
+                                        <td data-label="ID">{{$index+1}}</td>
+                                        <td data-label="Môn">{{an['testName']}}</td>
+                                        <td data-label="Điểm">{{an['testScore']}}</td>
+                                        <td data-label="Thời Gian">{{an['testDateTime']}}</td>
+                                        <td data-label="Tổng kết">Time  {{an['scopeTimeTest']}} s  {{'-'+an['testCountTotal']}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <hr class="mt-5 mb-4 border-secondary-subtle">
+                                <p class="m-0 text-secondary text-center">Nếu Bạn chưa có tài khoản ? <a
+                                        href="#!register" class="link-primary text-decoration-none">Đăng kí ngay</a></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="mt-5 mb-4">Liên kết với chúng tôi tại đây</p>
+                                <div class="d-flex gap-3 flex-column flex-xl-row">
+                                    <a href="https://www.facebook.com/dylan.1907"
+                                        class="btn bsb-btn-xl btn-outline-primary">
+                                        <i class="bx bxl-facebook-circle"></i>
+                                        <span class="ms-2 fs-6">Facebook</span>
+                                    </a>
+                                    <a href="https://github.com/haihaycode" class="btn bsb-btn-xl btn-outline-primary">
+                                        <i class="bx bxl-github"></i>
+                                        <span class="ms-2 fs-6">Github</span>
+                                    </a>
+                                    <a href="#!" class="btn bsb-btn-xl btn-outline-primary">
+                                        <i class="bx bx-location-plus"></i>
+                                        <span class="ms-2 fs-6">FPT Polytechnic Đà Nẵng</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

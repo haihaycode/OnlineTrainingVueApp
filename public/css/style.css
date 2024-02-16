@@ -1,0 +1,20 @@
+
+
+body{
+    background-image: url(../image/hero-bg.png)  ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+  }
+.btn-primary{ 
+  background-color: #4723D9  ;
+}
+.toastr-success{
+  background-color: #4723D9 ;
+}
+.custom-toast {
+  top: 50px !important; /* Đặt vị trí top là 50px */
+}
+.custom-toast {
+  transition: transform 0.5s ease-in-out;
+}

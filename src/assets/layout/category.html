@@ -1,0 +1,75 @@
+<style>
+    .card-thumbnail {
+        max-height: 250px;
+        overflow: hidden;
+        
+    }
+    .card {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    
+    .card:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card:hover .card-thumbnail {
+        filter: blur(4px);
+    }
+    
+    .card-thumbnail {
+        transition: filter 0.3s ease-in-out;
+    }
+    
+</style>
+<section class=" py-4 my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+               <h2 class="mb-3 fs-1 fw-normal  text-primary-emphasis"><i class="bx bxs-dashboard"></i>  Danh Mục Bài Thi</h2>
+               <h3 class="  fw-bold fs-6 fw-normal text-secondary ">Kết quả : <code class="fs-3 fw-normal text-primary-emphasis" >  {{subjects.length}}</code>    Môn thi   </h3>
+               <h3 class=" h1 fw-bold  fs-6 fw-normal text-secondary m-0">Chọn Phần Thi theo bộ môn bạn đang học và chúc bạn thi đạt nhiều điểm cao !     </h3>
+               <div class="col-12">
+                <div class="input-group mb-3">
+                    <input type="text" ng-model="searchText" ng-change="search()" class="form-control" placeholder="Tim Kiếm Môn Thi  ...">
+                </div>
+            </div>
+            </div>
+
+            <div ng-repeat="sj in subjects| limitTo:6:cout" class="col-md-6 col-lg-4 ">
+                <div class="card  my-3 overflow-hidden" style="height: 400px;">
+                    <div class="card-thumbnail overflow-hidden">
+                        <img ng-src="image/logos/{{sj.Logo}}" class="img-fluid" alt="image/logos/{{sj.Logo}}">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title"><a href="#!viewtest/{{sj.Id}}" class="text-secondary">{{sj.Name}}</a></h3>
+                        <p class="card-text">Bài Thi Gồm đầy đủ các kiến thức đã học trong bộ môn {{sj.Name}}</p>
+                        <a href="#!viewtest/{{sj.Id}}" class="btn btn-primary text-white">Chi Tiết Bài Thi</a>
+                    </div>
+                </div>
+            </div>
+          
+            
+
+           
+
+            
+
+           
+
+           
+
+            
+        </div>
+     
+    </div>
+
+    
+</section>
+<div ng-click="scrollToTop()" class="text-center text-primary-emphasis">
+<i ng-click="prev()"  class="border border-1 rounded px-2 bx bxs-left-arrow-alt display-5"></i>
+<i ng-click="next()" class="border border-1  rounded px-2  bx bxs-right-arrow-alt display-5"></i>
+   
+</div>
+<br>
+<h3 class="text-center h1 fw-bold mb-5 fs-6 fw-normal text-secondary m-0"> Bạn đang ở trang <code class="h2 text-danger">{{cout/6+1}}/{{pageCount}}</code> Chúc Bạn Thi Tốt Và Đạt được Điểm Cao   <i class="bx bx-check-circle"></i></h3>

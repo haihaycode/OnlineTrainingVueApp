@@ -1,0 +1,72 @@
+
+/* loading *//* Make clicks pass-through */
+#nprogress::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.383); /* Màu của lớp mờ */
+  backdrop-filter: blur(10px); /* Hiệu ứng mờ */
+  z-index: 9999; /* Lớp z cao hơn so với spinner */
+}
+
+/* Thanh tiến trình (progress bar) */
+#nprogress .bar {
+  display: none; /* Ẩn thanh tiến trình */
+}
+
+/* Hiệu ứng mờ */
+#nprogress .peg {
+  display: none; /* Ẩn hiệu ứng mờ */
+}
+
+/* Hiển thị hình tròn (spinner) */
+#nprogress .spinner {
+  display: block; /* Hiển thị spinner */
+  position: fixed; /* Cố định vị trí */
+  z-index: 10000; /* Lớp cao nhất */
+  top: 50%; /* Chỉ định vị trí theo trục y */
+  left: 50%; /* Chỉ định vị trí theo trục x */
+  transform: translate(-50%, -50%); /* Dịch chuyển vị trí ra giữa */
+}
+
+/* Biểu tượng của spinner */
+#nprogress .spinner-icon {
+  position: relative;
+  width:  100px;
+  height: 100px;
+  background: #004ade;
+  transform: rotateX(65deg) rotate(45deg);
+  transform: perspective(200px) rotateX(65deg) rotate(45deg); 
+  color: #fff;
+  animation: layers1 1s linear infinite alternate;
+}
+
+/* Keyframes cho spinner */
+.spinner-icon:after {
+  content: 'Online Training';
+  font-size: 16px; /* Kích thước chữ */
+  font-weight: bold;
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7);
+  color: #341c94; /* Màu chữ */
+  font-family: Arial, sans-serif; /* Kiểu chữ */
+  font-size: 16px; /* Kích thước chữ */
+  text-align: center; /* Căn giữa theo chiều ngang */
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  animation: layerTr 1s linear infinite alternate;
+}
+
+@keyframes layers1 {
+  0% { box-shadow: 0px 0px 0 0px  }
+ 90% , 100% { box-shadow: 20px 20px 0 -4px  }
+}
+@keyframes layerTr {
+  0% { transform:  translate(0, 0) scale(1) }
+  100% {  transform: translate(-25px, -25px) scale(1) }
+}
