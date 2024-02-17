@@ -2,7 +2,7 @@
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-// import store from '@/store'; // Import store từ tệp store
+import store from '@/store'; // Import store từ tệp store
 
 import ClientLayout from '../components/Layout/ClientLayout.vue';
 import AdminLayout from '../components/Layout/AdminLayout.vue';
@@ -90,25 +90,25 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: 'hash',
+  mode: 'hash',//history : chuyển #/ về đường dẫn truyền thống thân thiện hơn
   base: process.env.BASE_URL,
   routes
 });
 
 
-// router.beforeEach((to, from, next) => {
-//   const isAuthenticated = store.getters.getUser !== null;
-//   const isLoginOrRegister = to.path === '/Login' || to.path === '/Register';
-//   const isInfoPage = to.path === '/info'; // Kiểm tra xem trang hiện tại có phải là trang info hay không
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = store.getters.getUser !== null;
+  const isLoginOrRegister = to.path === '/Login' || to.path === '/Register';
+  const isInfoPage = to.path === '/info'; // Kiểm tra xem trang hiện tại có phải là trang info hay không
   
-//   if (isAuthenticated && isLoginOrRegister) {
-//     next({ path: '/' }); // Nếu đã đăng nhập và đang cố gắng truy cập trang đăng nhập hoặc đăng ký, chuyển hướng về trang chính
-//   } else if (!isAuthenticated && isInfoPage) {
-//     next({ path: '/' }); // Nếu chưa đăng nhập và đang cố gắng truy cập trang info, chuyển hướng về trang chính
-//   } else {
-//     next(); // Tiếp tục điều hướng
-//   }
-// });
+  if (isAuthenticated && isLoginOrRegister) {
+    next({ path: '/' }); // Nếu đã đăng nhập và đang cố gắng truy cập trang đăng nhập hoặc đăng ký, chuyển hướng về trang chính
+  } else if (!isAuthenticated && isInfoPage) {
+    next({ path: '/' }); // Nếu chưa đăng nhập và đang cố gắng truy cập trang info, chuyển hướng về trang chính
+  } else {
+    next(); // Tiếp tục điều hướng
+  }
+});
 
 
 export default router;
