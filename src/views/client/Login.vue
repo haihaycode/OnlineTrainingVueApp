@@ -8,8 +8,9 @@
               <b-card-body class="p-md-5">
                 <div class="row justify-content-center">
                   <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                    <p class="text-center h1 fw-bold mb-2 mx-1 mx-md-4 mt-4">Đăng Nhập</p>
-
+                    <p class="text-center fw-bold fs-1 fw-normal text-secondary m-0">Đăng Nhập</p>
+                    <p class="text-center fs-6 fw-light text-secondary ">Đăng nhập ngay bây giờ để thi
+                      các bài thi mới nhất</p>
                     <b-form @submit.prevent="handleLogin">
                       <b-form-group id="login-username-group" label="Tên người dùng:" label-for="login-username">
                         <b-form-input id="login-username" autocomplete="username" v-model.trim="loginForm.username"></b-form-input>

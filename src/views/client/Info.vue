@@ -15,9 +15,9 @@
                                     <img :src="userData && userData.avatar ? userData.avatar : 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp'"
                                         alt="Avatar" class="img-fluid  my-5" style="width: 200px; height: 200px; border-radius: 50%;" />
 
-                                    <h5 class="fw-bold fw-normal text-secondary">{{ userData ? userData.fullname : "" }}</h5>
+                                    <h5 class="fw-bold fw-normal text-success">{{ userData ? userData.fullname : "" }}</h5>
                                
-                                    <p class="text-right p-1 m-xl-3 fw-light fs-6 text-secondary">{{ userData && userData.description ? userData.description : "Đang cập nhật" }}</p>
+                                    <p class="text-right fw-normal  fs-6 text-secondary">{{ userData && userData.description ? userData.description : "Đang cập nhật" }}</p>
                                     <p class="p-1"></p>
 
                                     <i class="far fa-edit mb-5"  @click="scrollToForm"></i>
@@ -25,16 +25,16 @@
                                 <div class="col-md-8">
                                     <div class="card-body p-4">
                                         <h1 class="fw-bold fs-1 fw-normal text-secondary">Thông tin cá nhân</h1>
-                                        <h1 class="fw-light fs-6 fw-normal text-secondary"></h1>
+                                        <p class="fs-6 fw-light text-secondary ">Quản lí các thông tin của bạn tốt nhất</p>
                                         <hr class="mt-0 mb-4">
                                         <div class="row pt-1">
                                             <div class="col-6 mb-3">
                                                 <h6>Tài khoản</h6>
-                                                <p  class="fw-light fs-6 text-secondary"  style="word-wrap: break-word;">{{ userData && userData.username ? userData.username : "" }}</p>
+                                                <p  class=" fw-normal  fs-6 text-secondary"  style="word-wrap: break-word;">{{ userData && userData.username ? userData.username : "" }}</p>
                                             </div>
                                             <div class="col-6 mb-3">
                                                 <h6>Tài khoản</h6>
-                                                      <i class="fw-light fs-6 text-secondary" style="word-wrap: break-word;">{{ userData && userData.email ? userData.email : "" }}</i>
+                                                      <p class=" fw-normal  fs-6 text-secondary" style="word-wrap: break-word;">{{ userData && userData.email ? userData.email : "" }}</p>
 </div>
 
                                            
@@ -42,11 +42,11 @@
                                         <div class="row pt-1">
                                             <div class="col-6 mb-3">
                                                 <h6>Ngày sinh</h6>
-                                                <p class="fw-light fs-6 text-secondary">{{ userData && userData.birthdate ? userData.birthdate : "" }}</p>
+                                                <p class=" fw-normal  fs-6 text-secondary">{{ userData && userData.birthdate ? userData.birthdate : "" }}</p>
                                             </div>
                                             <div class="col-6 mb-3">
                                                 <h6>Sở thích</h6>
-                                                <p class="fw-light fs-6 text-secondary" style="word-wrap: break-word">{{ userData && userData.hobbies ? userData.hobbies : "" }}</p>
+                                                <p class=" fw-normal  fs-6 text-secondary" style="word-wrap: break-word">{{ userData && userData.hobbies ? userData.hobbies : "" }}</p>
                                             </div>
                                            
                                         </div>
@@ -55,7 +55,7 @@
                                         <div class="row pt-1">
                                             <div class="col-6 mb-3">
                                                 <h6>Trạng thái</h6>
-                                                <p class="fw-light fs-6 text-secondary">{{ userData && userData.level ==1 ? "Giáo Viên" : "Học Viên"  }}</p>
+                                                <p class=" fw-normal text-success fs-6 text-secondary">{{ userData && userData.level ==1 ? "Giáo Viên" : "Học Viên"  }}</p>
                                             </div>
                                             <div class="col-6 mb-3">
                                                 <h6>Đang cập nhật</h6>
@@ -93,7 +93,7 @@
                                             <b-form-group label="UserName *" label-for="username"
                                                 :state="!$v.userInfo.username.$error">
                                                 <b-form-input id="username"  autocomplete="username"  disabled
-                                                    v-model="userInfo.username"></b-form-input>
+                                                    v-model="userInfo.username" class="text-success"></b-form-input>
                                                 <span v-if="!$v.userInfo.username.required">Tên người
                                                     dùng là trường bắt buộc</span>
                                             </b-form-group>
