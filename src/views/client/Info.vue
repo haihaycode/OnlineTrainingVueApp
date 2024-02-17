@@ -4,23 +4,25 @@
 
 
         <section class="vh-50">
-            <div class="container py-5 h-100">         
+            <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col col-lg-8 mb-4 mb-lg-0">
-                       
+
                         <div class="card mb-3" style="border-radius: .5rem;  background-color: rgba(240, 248, 255, 0.125);">
                             <div class="row g-0">
                                 <div class="col-md-4 gradient-custom text-center"
                                     style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
                                     <img :src="userData && userData.avatar ? userData.avatar : 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp'"
-                                        alt="Avatar" class="img-fluid  my-5" style="width: 200px; height: 200px; border-radius: 50%;" />
+                                        alt="Avatar" class="img-fluid rounded-circle img-thumbnail  my-5"
+                                        style="width: 200px; height: 200px; border-radius: 50%;" />
 
                                     <h5 class="fw-bold fw-normal text-success">{{ userData ? userData.fullname : "" }}</h5>
-                               
-                                    <p class="text-right fw-normal  fs-6 text-secondary">{{ userData && userData.description ? userData.description : "Đang cập nhật" }}</p>
+
+                                    <p class="text-right fw-normal  fs-6 text-secondary">{{ userData && userData.description
+                                        ? userData.description : "Đang cập nhật" }}</p>
                                     <p class="p-1"></p>
 
-                                    <i class="far fa-edit mb-5"  @click="scrollToForm"></i>
+                                    <i class="far fa-edit mb-5" @click="scrollToForm"></i>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body p-4">
@@ -30,32 +32,37 @@
                                         <div class="row pt-1">
                                             <div class="col-6 mb-3">
                                                 <h6>Tài khoản</h6>
-                                                <p  class=" fw-normal  fs-6 text-secondary"  style="word-wrap: break-word;">{{ userData && userData.username ? userData.username : "" }}</p>
+                                                <p class=" fw-normal  fs-6 text-secondary" style="word-wrap: break-word;">{{
+                                                    userData && userData.username ? userData.username : "" }}</p>
                                             </div>
                                             <div class="col-6 mb-3">
                                                 <h6>Tài khoản</h6>
-                                                      <p class=" fw-normal  fs-6 text-secondary" style="word-wrap: break-word;">{{ userData && userData.email ? userData.email : "" }}</p>
-</div>
+                                                <p class=" fw-normal  fs-6 text-secondary" style="word-wrap: break-word;">{{
+                                                    userData && userData.email ? userData.email : "" }}</p>
+                                            </div>
 
-                                           
+
                                         </div>
                                         <div class="row pt-1">
                                             <div class="col-6 mb-3">
                                                 <h6>Ngày sinh</h6>
-                                                <p class=" fw-normal  fs-6 text-secondary">{{ userData && userData.birthdate ? userData.birthdate : "" }}</p>
+                                                <p class=" fw-normal  fs-6 text-secondary">{{ userData && userData.birthdate
+                                                    ? userData.birthdate : "" }}</p>
                                             </div>
                                             <div class="col-6 mb-3">
                                                 <h6>Sở thích</h6>
-                                                <p class=" fw-normal  fs-6 text-secondary" style="word-wrap: break-word">{{ userData && userData.hobbies ? userData.hobbies : "" }}</p>
+                                                <p class=" fw-normal  fs-6 text-secondary" style="word-wrap: break-word">{{
+                                                    userData && userData.hobbies ? userData.hobbies : "" }}</p>
                                             </div>
-                                           
+
                                         </div>
                                         <h6>Trạng thái</h6>
                                         <hr class="mt-0 mb-4">
                                         <div class="row pt-1">
                                             <div class="col-6 mb-3">
                                                 <h6>Trạng thái</h6>
-                                                <p class=" fw-normal text-success fs-6 text-secondary">{{ userData && userData.level ==1 ? "Giáo Viên" : "Học Viên"  }}</p>
+                                                <p class=" fw-normal text-success fs-6 text-secondary">{{ userData &&
+                                                    userData.level == 1 ? "Giáo Viên" : "Học Viên" }}</p>
                                             </div>
                                             <div class="col-6 mb-3">
                                                 <h6>Đang cập nhật</h6>
@@ -63,16 +70,16 @@
                                             </div>
                                         </div>
                                         <div class="d-flex justify-content-start">
-                                           
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                           
+
                         </div>
                         <hr>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -88,11 +95,11 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                                       
+
                                         <b-form @submit.prevent="submitForm" id="formEditInfo">
                                             <b-form-group label="UserName *" label-for="username"
                                                 :state="!$v.userInfo.username.$error">
-                                                <b-form-input id="username"  autocomplete="username"  disabled
+                                                <b-form-input id="username" autocomplete="username" disabled
                                                     v-model="userInfo.username" class="text-success"></b-form-input>
                                                 <span v-if="!$v.userInfo.username.required">Tên người
                                                     dùng là trường bắt buộc</span>
@@ -115,8 +122,8 @@
                                             </b-form-group>
                                             <b-form-group label="Mật khẩu *" label-for="password"
                                                 :state="!$v.userInfo.password.$error">
-                                                <b-form-input type="password" id="password"
-                                                    v-model="userInfo.password" autocomplete="current-password"></b-form-input>
+                                                <b-form-input type="password" id="password" v-model="userInfo.password"
+                                                    autocomplete="current-password"></b-form-input>
                                                 <span v-if="!$v.userInfo.password.required">Mật khẩu là
                                                     trường bắt buộc</span>
                                             </b-form-group>
@@ -142,12 +149,15 @@
                                                 <b-form-textarea id="description" v-model="userInfo.description"
                                                     placeholder="vd : description"></b-form-textarea>
                                             </b-form-group>
-                                            <b-form-group label="Hình ảnh:" label-for="avatar">
-                                                <b-form-file id="avatar" @change="handleFileChange"></b-form-file>
+                                            <b-form-group label="Hình ảnh:" class="mb-3" label-for="avatar">
+                                                <label for="example-fileinput" class="form-label">Default file input</label>
+                                                <b-form-file id="avatar" @change="handleFileChange"
+                                                    class="form-control"></b-form-file>
                                             </b-form-group>
-                                          <div class="">
-                                            <b-button type="submit" variant="primary">Cập nhật</b-button>
-                                          </div>
+
+                                            <div class="">
+                                                <b-button type="submit" class="badge bg-primary p-2">Cập nhật</b-button>
+                                            </div>
                                         </b-form>
 
                                     </div>
@@ -161,6 +171,10 @@
                 </div>
             </div>
         </section>
+
+
+
+
     </div>
 </template>
 <script>
@@ -246,11 +260,11 @@ export default {
             this.userInfo.avatar = selectedFile;
         },
         scrollToForm() {
-      // Lấy thẻ form
-      const form = document.getElementById('formEditInfo');
-      // Cuộn xuống dưới form bằng cách sử dụng phương thức scrollIntoView()
-      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+            // Lấy thẻ form
+            const form = document.getElementById('formEditInfo');
+            // Cuộn xuống dưới form bằng cách sử dụng phương thức scrollIntoView()
+            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     }
 };
 </script>
@@ -296,5 +310,4 @@ export default {
 .custom-file-input:disabled:hover::before {
     background-color: #e9ecef;
     border-color: #adb5bd;
-}
-</style>
+}</style>
