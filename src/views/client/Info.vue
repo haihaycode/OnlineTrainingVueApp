@@ -182,12 +182,12 @@ export default {
             userInfo: {
                 avatar: null,
                 username: user.username,
-                fullname: user.fullname,
-                email: user.email,
+                fullname: user.fullname ,
+                email: user.email ? user.email : "",
                 password: "",
                 gender: user.gender ? user.gender : 1,// 1: nam . 2 nữ 
                 birthdate: user.birthdate ? user.birthdate : "2000-02-20",//string // năm tháng ngày
-                address: user.address,
+                address: user.address ? user.address : "",
                 hobbies: user.hobbies ? user.hobbies : "",//sở thích
                 description: user.description ? user.description : "",
             }

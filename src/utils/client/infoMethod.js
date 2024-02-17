@@ -75,6 +75,7 @@ export async function uploadInfo(toastr, store, userInfo) {
 
     } catch (error) {
         toastr.warning('Vui lòng thử lại sau ít phút', 'ohhhh !..');
+        console.log(error);
     } finally {
         NProgress.done();
         toastr.success('Cập nhật thành công', 'Thông báo');
