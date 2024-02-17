@@ -13,7 +13,8 @@ import firebase from 'firebase/app';
 import 'firebase/database';
 import NProgress from 'nprogress';
 import store from '@/store';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 Vue.use(BootstrapVue);

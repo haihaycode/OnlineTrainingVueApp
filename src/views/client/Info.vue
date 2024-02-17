@@ -12,11 +12,14 @@
                             <div class="row g-0">
                                 <div class="col-md-4 gradient-custom text-center"
                                     style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                                    <img :src="userData && userData.avatar ? userData.avatar : 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp'"
+                                    <img :src="userData && userData.avatar ? userData.avatar : userData.gender ? userData.gender == 1 ? 'https://png.pngtree.com/png-vector/20191101/ourmid/pngtree-cartoon-color-simple-male-avatar-png-image_1934459.jpg' : 'https://www.svgrepo.com/show/382099/female-avatar-girl-face-woman-user-2.svg' : 'https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp'"
                                         alt="Avatar" class="img-fluid rounded-circle img-thumbnail  my-5"
                                         style="width: 200px; height: 200px; border-radius: 50%;" />
 
+
+
                                     <h5 class="fw-bold fw-normal text-success">{{ userData ? userData.fullname : "" }}</h5>
+
 
                                     <p class="text-right fw-normal  fs-6 text-secondary">{{ userData && userData.description
                                         ? userData.description : "Đang cập nhật" }}</p>
@@ -77,7 +80,7 @@
                             </div>
 
                         </div>
-                        <hr>
+                      
                     </div>
 
                 </div>
@@ -88,6 +91,8 @@
         <section id="login">
             <div class="container fw-light fs-6 text-secondary">
                 <h3 class="text-center h1 fw-bold mb-1 fs-1 fw-normal text-secondary m-0">Cập nhật thông tin cá nhân </h3>
+                <h3 class="text-center fs-5 fw-lighter text-secondary m-0"></h3>
+                <footer class="blockquote-footer text-center fs-5 fw-lighter text-secondary m-0">Cập Nhật các thông tin mới nhất của bạn <cite title="Source Title">tại đây</cite></footer>
                 <div class="row d-flex justify-content-center align-items-center">
                     <div class="col-lg-12 col-xl-11">
                         <div class="text-black" style="border-radius: 10px;">
@@ -169,9 +174,91 @@
                         </div>
                     </div>
                 </div>
+                <hr>
+            </div>
+            
+        </section>
+        <br>
+
+
+        <section id="teacher">
+            <div class="container fw-light fs-6 text-secondary">
+                <h3 class="text-center h1 fw-bold mb-1 fs-1 fw-normal text-secondary m-0">Đăng ký Thở thành Giáo Viên </h3>
+                <footer class="blockquote-footer text-center fs-5 fw-lighter text-secondary m-0">Các lợi ích khi trở thành 1 <cite title="Source Title">Giáo viên</cite></footer>
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-lg-12 col-xl-11">
+
+                        <div class="text-black" style="border-radius: 10px;">
+                            <b-card-body class="p-md-5">
+                                <div class="row justify-content-center">
+
+                                    <div class="col-md-10 col-lg-6 col-xl-5">
+                                        <img src="image/2011.i518.015.realistic test paper pencil.jpg"
+                                            class="img-fluid rounded" alt="Sample image">
+                                    </div>
+                                    <br>
+
+                                    <div class="col-md-10 col-lg-6 col-xl-7 order-2 order-lg-1">
+                                        <div class="accordion" id="accordionExample">
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingOne">
+                                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                        data-bs-target="#collapseOne" aria-expanded="true"
+                                                        aria-controls="collapseOne">
+                                                        Chia sẻ kiến thức và kỹ năng
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        Trở thành giáo viên cho phép bạn chia sẻ kiến thức và kỹ năng của mình với người khác. Bằng cách này, bạn có thể giúp học viên hiểu sâu hơn về chủ đề và phát <code>triển kỹ năng của họ trong lĩnh vực cụ thể.</code>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingTwo">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                        aria-expanded="false" aria-controls="collapseTwo">
+                                                        Tạo ra tài liệu <code>  &nbsp; giảng dạy và bài thi chất lượng </code>
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        Đăng bài thi và viết các bài viết cho học viên đọc là cách tạo ra tài liệu giảng dạy chất lượng. Những tài liệu này có thể <strong>giúp học viên tự học và ôn tập, cũng như cung cấp hướng</strong> dẫn chi tiết và bài tập thực hành.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="accordion-item">
+                                                <h2 class="accordion-header" id="headingThree">
+                                                    <button class="accordion-button collapsed" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                        aria-expanded="false" aria-controls="collapseThree">
+                                                        Xây dựng danh tiếng và mạng lưới
+                                                    </button>
+                                                </h2>
+                                                <div id="collapseThree" class="accordion-collapse collapse"
+                                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                    <div class="accordion-body">
+                                                        Trở thành giáo viên và chia sẻ kiến thức của bạn có thể giúp xây dựng danh tiếng và mạng lưới chuyên môn của bạn. Bằng cách tạo ra các <code>tài liệu và bài viết chất lượng</code>, bạn có thể thu hút sự quan tâm từ học viên, đồng nghiệp và cộng đồng giáo dục, tạo ra cơ hội mới cho sự phát triển cá nhân và sự nghiệp của bạn
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span type="button" class="badge bg-primary rounded-pill p-3 m-2">Đăng ký thành Giáo Viên Ngay !</span>
+
+                                    </div>
+                                </div>
+                              
+                            </b-card-body>
+                        </div>
+                    </div>
+                </div>
+
+          
             </div>
         </section>
-
 
 
 
