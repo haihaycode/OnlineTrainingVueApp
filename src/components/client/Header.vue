@@ -2,13 +2,13 @@
   <div>
     <b-navbar type="light" variant="light" toggleable="md" class="fixed-top">
       <b-navbar-brand href="#" style="margin-left: 10px">
-        <img src="favicon.ico" width="30px" rounded="circle" alt="logo" />
+        <img src="image/logoApp.png" width="50px" rounded="circle" alt="logo" />
       </b-navbar-brand>
-      <b-navbar-brand to="/" class="text-sm-start">Online Training</b-navbar-brand>
+      <b-navbar-brand to="/" class="text-sm-start  fw-semibold mb-1 fs-4  text-secondary ">Online Training</b-navbar-brand>
 
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-navbar-toggle target="nav-collapse" class="mr-4"></b-navbar-toggle>
 
-      <b-collapse id="nav-collapse" is-nav style="padding-left: 20px; padding-right: 20px">
+      <b-collapse id="nav-collapse" class="text-sm-start  fw-normal  fs-6  text-secondary " is-nav style="padding-left: 20px; padding-right: 20px">
         <b-navbar-nav class="mr-auto ml-3">
           <b-nav-item to="news">Tin tức</b-nav-item>
           <b-nav-item to="about"> Giới thiệu</b-nav-item>
@@ -71,3 +71,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+button.navbar-toggler.mr-4.collapsed {
+    margin-right: 20px;
+}
+</style>
