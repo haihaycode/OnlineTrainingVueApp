@@ -99,7 +99,7 @@
                                             </b-form-group>
 
                                             <b-form-group label="fullname *" label-for="fullname"
-                                                :state="!$v.userInfo.username.$error">
+                                                :state="!$v.userInfo.fullname.$error">
                                                 <b-form-input id="fullname" v-model="userInfo.fullname"
                                                     placeholder="vd : Nguyen Van A"></b-form-input>
                                                 <span v-if="!$v.userInfo.fullname.required">Tên người
@@ -108,7 +108,7 @@
 
                                             <b-form-group label="Email *" label-for="email"
                                                 :state="!$v.userInfo.email.$error">
-                                                <b-form-input type="email" id="email"
+                                                <b-form-input type="email" id="email" disabled
                                                     v-model="userInfo.email"></b-form-input>
                                                 <span v-if="!$v.userInfo.email.required">Email là trường
                                                     bắt buộc</span>
@@ -182,7 +182,7 @@ export default {
             userInfo: {
                 avatar: null,
                 username: user.username,
-                fullname: user.fullname ,
+                fullname: user.fullname ? user.fullname : "",
                 email: user.email ? user.email : "",
                 password: "",
                 gender: user.gender ? user.gender : 1,// 1: nam . 2 nữ 
