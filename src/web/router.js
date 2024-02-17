@@ -98,7 +98,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   const isAuthenticated = store.getters.getUser !== null;
-  const isLoginOrRegister = to.path === '/Login' || to.path === '/Register';
+  const isLoginOrRegister = to.path === '/login' || to.path === '/register';
   const isInfoPage = to.path === '/info'; // Kiểm tra xem trang hiện tại có phải là trang info hay không
   
   if (isAuthenticated && isLoginOrRegister) {
