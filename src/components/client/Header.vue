@@ -30,7 +30,7 @@
 
             <b-dropdown-item to="info">Quản lí thông tin</b-dropdown-item>
             <b-dropdown-item href="#">Lịch sử bài thi</b-dropdown-item>
-            <b-dropdown-item href="#">Quản lí bài đăng</b-dropdown-item>
+            <b-dropdown-item to="managerposts">Quản lí bài đăng</b-dropdown-item>
 
             <div v-if="userData && userData.level === 1">
               <b-dropdown-item href="#">Quản lí bài thi</b-dropdown-item>
