@@ -25,9 +25,7 @@
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                             aria-labelledby="pills-home-tab">
                             <h2>Thêm bài viết mới  </h2>
-                            <p>
-                                
-                            </p>
+                            <p>Tạo các bài đăng của bạn tại đây </p>
                         </div>
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                             <h2>Quản lý các bài viết tại đây</h2>
