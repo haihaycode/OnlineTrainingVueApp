@@ -28,7 +28,7 @@
               <b-dropdown-item to="register">Đăng ký</b-dropdown-item>
             </div>
 
-            <b-dropdown-item href="#">Quản lí thông tin</b-dropdown-item>
+            <b-dropdown-item to="info">Quản lí thông tin</b-dropdown-item>
             <b-dropdown-item href="#">Lịch sử bài thi</b-dropdown-item>
             <b-dropdown-item href="#">Quản lí bài đăng</b-dropdown-item>
 

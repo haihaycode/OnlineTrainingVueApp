@@ -14,7 +14,7 @@
                     Nghiệm </h3>
                   <div class="text-center fw-bold mb-5 fs-6 fw-normal text-secondary m-0">
                     <b-link class="text-primary mb-3 " to="info" v-if="userData">
-                      Hi ! {{ userData.username }} <i class="fa fa-hill-avalanche"></i>
+                      Hi ! {{ userData.fullname }} <i class="fa fa-hill-avalanche"></i>
                     </b-link>
 
                     <div v-if="!userData">

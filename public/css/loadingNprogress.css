@@ -32,6 +32,8 @@
   transform: translate(-50%, -50%); /* Dịch chuyển vị trí ra giữa */
 }
 
+
+
 /* Biểu tượng của spinner */
 #nprogress .spinner-icon {
   position: relative;
@@ -46,7 +48,7 @@
 
 /* Keyframes cho spinner */
 .spinner-icon:after {
-  content: 'Online Training';
+  content: '';
   font-size: 16px; /* Kích thước chữ */
   font-weight: bold;
   position: absolute;

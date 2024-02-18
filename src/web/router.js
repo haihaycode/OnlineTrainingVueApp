@@ -17,6 +17,7 @@ import AdminFooter from '../components/admin/Footer.vue';
 import RegisterClient from '../views/client/Register.vue';
 import LoginClient from '../views/client/Login.vue';
 import InfoClient from '../views/client/Info.vue';
+import ManagerPostClient from '../views/client/posts.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -60,6 +61,14 @@ const routes = [
         path: 'info',
         components: {
           default: InfoClient,
+          header: ClientHeader,
+          footer: ClientFooter
+        }
+      },
+      {
+        path: 'managerposts',
+        components: {
+          default: ManagerPostClient,
           header: ClientHeader,
           footer: ClientFooter
         }

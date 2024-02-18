@@ -8,7 +8,7 @@
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col col-lg-8 mb-4 mb-lg-0">
 
-                        <div class="card mb-3" style="border-radius: .5rem;  background-color: rgba(240, 248, 255, 0.125);">
+                        <div class=" mb-3" style="border-radius: .5rem;  background-color: rgba(240, 248, 255, 0.125);">
                             <div class="row g-0">
                                 <div class="col-md-4 gradient-custom text-center"
                                     style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
@@ -174,7 +174,7 @@
                         </div>
                     </div>
                 </div>
-                <hr>
+                
             </div>
             
         </section>
@@ -193,7 +193,7 @@
                                 <div class="row justify-content-center">
 
                                     <div class="col-md-10 col-lg-6 col-xl-5">
-                                        <img src="image/2011.i518.015.realistic test paper pencil.jpg"
+                                        <img src="image/2011.i518.015.realistic test paper pencil.png"
                                             class="img-fluid rounded" alt="Sample image">
                                     </div>
                                     <br>
@@ -246,7 +246,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <span type="button" class="badge bg-primary rounded-pill p-3 m-2">Đăng ký thành Giáo Viên Ngay !</span>
+                                        <span type="button" @click="registerTeacher" class="btn btn-secondary">Đăng ký thành Giáo Viên Ngay !</span>
 
                                     </div>
                                 </div>
@@ -266,7 +266,7 @@
 </template>
 <script>
 import { required, email } from 'vuelidate/lib/validators';
-import { uploadInfo } from '@/utils/client/infoMethod'
+import { uploadInfo,registerTeacher } from '@/utils/client/infoMethod'
 
 import 'firebase/storage';
 
@@ -351,9 +351,19 @@ export default {
             const form = document.getElementById('formEditInfo');
             // Cuộn xuống dưới form bằng cách sử dụng phương thức scrollIntoView()
             form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        },
+        registerTeacher() {
+            console.log(this.userData)
+          if(this.userData.level == 1){
+            this.$toastr.warning('Bạn đã là một người đăng bài thi', 'Thông báo');
+          }else{
+            registerTeacher(this.userData.id, this.userData.username,this.$toastr);
+          }
+    }
+
     }
 };
+
 </script>
 
 <style scoped>
@@ -397,4 +407,5 @@ export default {
 .custom-file-input:disabled:hover::before {
     background-color: #e9ecef;
     border-color: #adb5bd;
-}</style>
+}
+</style>
