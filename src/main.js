@@ -22,6 +22,7 @@ Vue.component('BIcon', BIcon); // Đăng ký thành phần BIcon
 Vue.use(Vuelidate);
 Vue.use(BootstrapVue);
 
+
 Vue.prototype.$toastr = toastr;
 Vue.prototype.$store = store;
 Vue.config.productionTip = false;
@@ -35,6 +36,7 @@ async function initializeApp() {
     new Vue({
       store,
       router,
+     
       render: h => h(App)
     }).$mount('#app');
   } catch (error) {

@@ -21,4 +21,5 @@ export default {
 <style>
 @import '/public/css/style.css';
 @import '/public/css/loadingNprogress.css';
+@import "~quill/dist/quill.snow.css";
 </style>
